@@ -192,13 +192,4 @@ public class OrderedTask extends Task implements Serializable {
         steps.add(index, step);
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-    }
 }

@@ -623,7 +623,7 @@ public class SurveyFactory {
                     questionSteps.add(createBirthdateQuestionStep(context, profileInfo));
                     break;
                 case GENDER:
-                    createGenderQuestionStep(context, profileInfo);
+                    questionSteps.add(createGenderQuestionStep(context, profileInfo));
                     break;
                 case EXTERNAL_ID:
                     questionSteps.add(createExternalIdQuestionStep(context, profileInfo));

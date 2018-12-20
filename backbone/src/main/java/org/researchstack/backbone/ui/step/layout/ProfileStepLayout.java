@@ -8,6 +8,7 @@ import org.researchstack.backbone.DataProvider;
 import org.researchstack.backbone.R;
 import org.researchstack.backbone.model.ProfileInfoOption;
 import org.researchstack.backbone.model.User;
+import org.researchstack.backbone.model.UserHealth;
 import org.researchstack.backbone.model.survey.factory.SurveyFactory;
 import org.researchstack.backbone.result.StepResult;
 import org.researchstack.backbone.step.ProfileStep;
@@ -121,6 +122,12 @@ public class ProfileStepLayout extends FormStepLayout {
                                 stepResult = nameResult;
                             }
                             break;
+                        case GENDER:
+                            if (user.getUserHealth() != null && user.getUserHealth().getGender() != UserHealth.Gender.NOT_SET) {
+                                StepResult<UserHealth.Gender> nameResult = new StepResult<>(profileStep);
+                                nameResult.setResult(user.getUserHealth().getGender());
+                                stepResult = nameResult;
+                            }
                     }
                 }
                 // Add the step result to our result object so that the profile step bodies will
@@ -149,6 +156,12 @@ public class ProfileStepLayout extends FormStepLayout {
                         break;
                     case BIRTHDATE:
                         user.setBirthDate(getBirthdate());
+                        break;
+                    case GENDER:
+                        if (user.getUserHealth() == null) {
+                            user.setUserHealth(new UserHealth());
+                        }
+                        user.getUserHealth().setGender(getGender());
                         break;
                 }
             }
@@ -189,6 +202,18 @@ public class ProfileStepLayout extends FormStepLayout {
     @Nullable
     protected QuestionStep getEmailStep() {
         return getQuestionStep(ProfileInfoOption.EMAIL.getIdentifier());
+    }
+
+    /**
+     * @return Gender if this profile form step has it, null otherwise
+     */
+    @Nullable
+    protected UserHealth.Gender getGender() {
+        Object result = findStepResult(ProfileInfoOption.GENDER.getIdentifier());
+        if (result != null && result instanceof UserHealth.Gender) {
+            return (UserHealth.Gender)result;
+        }
+        return null;
     }
 
     /**

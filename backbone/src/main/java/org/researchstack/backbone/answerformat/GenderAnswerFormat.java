@@ -31,9 +31,9 @@ public class GenderAnswerFormat extends ChoiceAnswerFormat {
         String other    = UserHealth.Gender.OTHER.localizedTitle(context);
 
         Choice[] genderChoices = new Choice[3];
-        genderChoices[0] = new Choice<String>(female, female);
-        genderChoices[1] = new Choice<String>(male, male);
-        genderChoices[2] = new Choice<String>(other, other);
+        genderChoices[0] = new Choice<>(female, UserHealth.Gender.FEMALE);
+        genderChoices[1] = new Choice<>(male, UserHealth.Gender.MALE);
+        genderChoices[2] = new Choice<>(other, UserHealth.Gender.OTHER);
 
         return genderChoices;
     }

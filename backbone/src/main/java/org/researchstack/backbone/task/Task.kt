@@ -25,7 +25,7 @@ import java.io.Serializable
  * which corresponds to a single screen that displays multiple questions or items for which
  * participants provide information, such as first name, last name, and birth date.
  */
-abstract class Task : Serializable, Parcelable {
+abstract class Task : Serializable {
     /**
      * Gets the unique identifier for this task.
      *

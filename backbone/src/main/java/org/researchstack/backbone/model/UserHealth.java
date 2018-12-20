@@ -32,7 +32,7 @@ public class UserHealth implements Serializable {
     private Gender gender = Gender.NOT_SET;
 
     /** Default constructor for Serializable */
-    protected UserHealth() {}
+    public UserHealth() {}
 
     /**
      * @return valid weight measurement if it has been entered by the user
