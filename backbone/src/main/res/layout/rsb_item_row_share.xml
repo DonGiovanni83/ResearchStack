@@ -27,7 +27,6 @@
         android:focusable="true"
         android:gravity="center_vertical"
         android:singleLine="true"
-        android:textAppearance="@style/Preference_TextAppearanceMaterialSubhead"
         tools:ignore="RequiredSize"
         tools:text="@string/lorem_name"
         />
