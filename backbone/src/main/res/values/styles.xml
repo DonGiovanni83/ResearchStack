@@ -58,8 +58,8 @@
 
     <style name="Widget.Backbone.SubmitBar" parent="">
         <item name="android:background">@color/rsb_submit_bar_gray</item>
-        <item name="positiveActionTitle">@string/rsb_next</item>
-        <item name="negativeActionTitle">@string/rsb_step_skip</item>
+        <item name="positiveActionTitle">@string/rsb_BUTTON_NEXT</item>
+        <item name="negativeActionTitle">@string/rsb_BUTTON_SKIP</item>
         <item name="positiveActionColor">?attr/colorAccent</item>
         <item name="negativeActionColor">@color/rsb_submit_bar_negative</item>
     </style>
